@@ -1,0 +1,196 @@
+prompt --application/pages/page_00004
+begin
+--   Manifest
+--     PAGE: 00004
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.0'
+,p_default_workspace_id=>1000000
+,p_default_application_id=>101
+,p_default_id_offset=>74949676192244878
+,p_default_owner=>'DETALES'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>4
+,p_name=>unistr('Importuoti i\0161 excel')
+,p_alias=>unistr('KLIENTAI-I\0160-EXCEL')
+,p_page_mode=>'MODAL'
+,p_step_title=>unistr('Importuoti i\0161 excel')
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_page_component_map=>'17'
+,p_last_updated_by=>'DEV'
+,p_last_upd_yyyymmddhh24miss=>'20220308073611'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(37394178687412678)
+,p_plug_name=>unistr('Pasirinkite fail\0105')
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(9655019078517905)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_grid_column_span=>10
+,p_plug_display_column=>2
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(19795263261309491)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_imp.id(37394178687412678)
+,p_button_name=>'CREATE'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(9717591381517982)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Sukurti'
+,p_button_position=>'CREATE'
+,p_warn_on_unsaved_changes=>null
+,p_database_action=>'INSERT'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(19795627780309495)
+,p_name=>'P4_FILE'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(37394178687412678)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Failas'
+,p_display_as=>'NATIVE_FILE'
+,p_cSize=>30
+,p_colspan=>5
+,p_field_template=>wwv_flow_imp.id(9716479221517977)
+,p_item_template_options=>'#DEFAULT#'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'DB_COLUMN'
+,p_attribute_02=>'wwv_flow_files.mime_type'
+,p_attribute_03=>'wwv_flow_files.filename'
+,p_attribute_04=>'wwv_flow_files.file_charset'
+,p_attribute_05=>'wwv_flow_files.last_updated'
+,p_attribute_06=>'N'
+,p_attribute_12=>'INLINE'
+,p_attribute_13=>'Failas'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(19796018432309499)
+,p_name=>'P4_FILE_NAME'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_imp.id(37394178687412678)
+,p_prompt=>'Failo Pavadinimas'
+,p_source=>'select title from wwv_flow_files where filename like ''%.xlsx'';'
+,p_source_type=>'QUERY'
+,p_display_as=>'NATIVE_DISPLAY_ONLY'
+,p_colspan=>5
+,p_field_template=>wwv_flow_imp.id(9716479221517977)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'VALUE'
+,p_attribute_04=>'Y'
+,p_attribute_05=>'PLAIN'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(19798611309309526)
+,p_name=>'Import Companies'
+,p_event_sequence=>40
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_imp.id(19795263261309491)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'click'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(19799105021309527)
+,p_event_id=>wwv_flow_imp.id(19798611309309526)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'DECLARE',
+'    il_error NUMBER;',
+'    sl_error VARCHAR2(254);',
+'BEGIN',
+'    clients_excel_import(:P4_FILE_NAME, il_error, sl_error);',
+'END;'))
+,p_attribute_02=>'P4_FILE,P4_FILE_NAME'
+,p_attribute_05=>'PLSQL'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(19800168263309527)
+,p_event_id=>wwv_flow_imp.id(19798611309309526)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_ALERT'
+,p_attribute_01=>unistr('\012Era\0161as(-i) sukurtas(-i)!')
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(19799606991309527)
+,p_event_id=>wwv_flow_imp.id(19798611309309526)
+,p_event_result=>'TRUE'
+,p_action_sequence=>40
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLEAR'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P4_FILE,P4_FILE_NAME'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(19802020182392510)
+,p_event_id=>wwv_flow_imp.id(19798611309309526)
+,p_event_result=>'TRUE'
+,p_action_sequence=>50
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>'apex.navigation.redirect ( "f?p=&APP_ID.:2:&APP_SESSION.::NO:RP::" );'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(19796466704309523)
+,p_name=>'Excel File Add'
+,p_event_sequence=>50
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P4_FILE'
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'change'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(19796840041309525)
+,p_event_id=>wwv_flow_imp.id(19796466704309523)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_SUBMIT_PAGE'
+,p_attribute_02=>'N'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(19797364660309526)
+,p_event_id=>wwv_flow_imp.id(19796466704309523)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_SET_FOCUS'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P4_FILE_NAME'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(19797817809309526)
+,p_event_id=>wwv_flow_imp.id(19796466704309523)
+,p_event_result=>'TRUE'
+,p_action_sequence=>40
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_SET_VALUE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P4_FILE_NAME'
+,p_attribute_01=>'SQL_STATEMENT'
+,p_attribute_03=>'select title from wwv_flow_files where title like ''%.xlsx'';'
+,p_attribute_08=>'N'
+,p_attribute_09=>'N'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_imp.component_end;
+end;
+/

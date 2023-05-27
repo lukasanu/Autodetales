@@ -1,0 +1,392 @@
+prompt --application/shared_components/globalization/messages
+begin
+--   Manifest
+--     MESSAGES: 101
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.0'
+,p_default_workspace_id=>1000000
+,p_default_application_id=>101
+,p_default_id_offset=>74949676192244878
+,p_default_owner=>'DETALES'
+);
+null;
+wwv_flow_imp.component_end;
+end;
+/
+begin
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.0'
+,p_default_workspace_id=>1000000
+,p_default_application_id=>101
+,p_default_id_offset=>74949676192244878
+,p_default_owner=>'DETALES'
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69718175749729345)
+,p_name=>'APEX.DIALOG.CANCEL'
+,p_message_language=>'lt'
+,p_message_text=>unistr('At\0161aukti')
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69717865736625303)
+,p_name=>'APEX.DIALOG.HELP'
+,p_message_language=>'lt'
+,p_message_text=>'Pagalba'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69717579985620290)
+,p_name=>'APEX.DIALOG.SAVE'
+,p_message_language=>'lt'
+,p_message_text=>unistr('I\0161saugoti')
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(71264524179102204)
+,p_name=>'APEX.IG.ACTIONS'
+,p_message_language=>'lt'
+,p_message_text=>'Veiksmai'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68194235783613745)
+,p_name=>'APEX.IG.ADD_ROW'
+,p_message_language=>'lt'
+,p_message_text=>unistr('Prid\0117ti eilut\0119')
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69718624359735536)
+,p_name=>'APEX.IG.ALL'
+,p_message_language=>'lt'
+,p_message_text=>'Visi'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68192032558576298)
+,p_name=>'APEX.IG.ALL_TEXT_COLUMNS'
+,p_message_language=>'lt'
+,p_message_text=>'Visi teksto stulpeliai'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68192275055580686)
+,p_name=>'APEX.IG.CASE_SENSITIVE'
+,p_message_language=>'lt'
+,p_message_text=>unistr('Atsi\017Evelgti \012F raid\017Ei\0173 dyd\012F')
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(70975273006496863)
+,p_name=>'APEX.IG.CHART'
+,p_message_language=>'lt'
+,p_message_text=>'Grafikas'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69719506004751817)
+,p_name=>'APEX.IG.COLUMN'
+,p_message_language=>'lt'
+,p_message_text=>'Stulpelis'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69719933692755430)
+,p_name=>'APEX.IG.COLUMNS'
+,p_message_language=>'lt'
+,p_message_text=>'Stulpeliai'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69719774404754093)
+,p_name=>'APEX.IG.COUNT'
+,p_message_language=>'lt'
+,p_message_text=>'Suma'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68193615852604359)
+,p_name=>'APEX.IG.DELETE_ROW'
+,p_message_language=>'lt'
+,p_message_text=>unistr('I\0161trinti eilut\0119')
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68193456764600192)
+,p_name=>'APEX.IG.DELETE_ROWS'
+,p_message_language=>'lt'
+,p_message_text=>unistr('I\0161trinti eilutes')
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68194062059610546)
+,p_name=>'APEX.IG.DUPLICATE_ROW'
+,p_message_language=>'lt'
+,p_message_text=>unistr('Kopijuoti eilut\0119')
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68193788911607654)
+,p_name=>'APEX.IG.DUPLICATE_ROWS'
+,p_message_language=>'lt'
+,p_message_text=>'Kopijuoti eilutes'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69717281762611563)
+,p_name=>'APEX.IG.FILTER'
+,p_message_language=>'lt'
+,p_message_text=>'Filtras'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69716891437609432)
+,p_name=>'APEX.IG.FILTERS'
+,p_message_language=>'lt'
+,p_message_text=>'Filtrai'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69717080758610256)
+,p_name=>'APEX.IG.FILTER_WITH_DOTS'
+,p_message_language=>'lt'
+,p_message_text=>'Filtras...'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(71263703136052763)
+,p_name=>'APEX.IG.GO'
+,p_message_language=>'lt'
+,p_message_text=>'Pirmyn'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69718357684730913)
+,p_name=>'APEX.IG.HELP'
+,p_message_language=>'lt'
+,p_message_text=>'Pagalba'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69719350839748433)
+,p_name=>'APEX.IG.INVISIBLE'
+,p_message_language=>'lt'
+,p_message_text=>'Nerodyti'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68193198632597012)
+,p_name=>'APEX.IG.REFRESH'
+,p_message_language=>'lt'
+,p_message_text=>'Atnaujinti'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68193017660595476)
+,p_name=>'APEX.IG.REFRESH_ROW'
+,p_message_language=>'lt'
+,p_message_text=>unistr('Atnaujinti eilut\0119')
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68192828307594177)
+,p_name=>'APEX.IG.REFRESH_ROWS'
+,p_message_language=>'lt'
+,p_message_text=>'Atnaujinti eilutes'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68192600563590503)
+,p_name=>'APEX.IG.REVERT_CHANGES'
+,p_message_language=>'lt'
+,p_message_text=>'Atstatyti pakeitimus'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68192384521589227)
+,p_name=>'APEX.IG.REVERT_ROWS'
+,p_message_language=>'lt'
+,p_message_text=>'Atstatyti eilutes'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(71264273302065315)
+,p_name=>'APEX.IG.SEARCH'
+,p_message_language=>'lt'
+,p_message_text=>unistr('Ie\0161koti')
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(71264041156061711)
+,p_name=>'APEX.IG.SEARCH.ALL_COLUMNS'
+,p_message_language=>'lt'
+,p_message_text=>unistr('Ie\0161koti')
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(70305880385315301)
+,p_name=>'APEX.IG.SELECT'
+,p_message_language=>'lt'
+,p_message_text=>'Pasirinkti'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68194448289616874)
+,p_name=>'APEX.IG.SINGLE_ROW_VIEW'
+,p_message_language=>'lt'
+,p_message_text=>unistr('Vienos eilut\0117s vaizdas')
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69716677630604987)
+,p_name=>'APEX.IG.TYPE'
+,p_message_language=>'lt'
+,p_message_text=>'Tipas'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68178961701371572)
+,p_name=>'APEX.IG.UNSAVED_CHANGES_CONTINUE_CONFIRM'
+,p_message_language=>'lt'
+,p_message_text=>unistr('Yra neu\017Esaugot\0173 pakeitim\0173. Ar norite t\0119sti?')
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69719077465744495)
+,p_name=>'APEX.IG.VISIBLE'
+,p_message_language=>'lt'
+,p_message_text=>'Rodyti'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69718801995739071)
+,p_name=>'APEX.IG.WIDTH'
+,p_message_language=>'lt'
+,p_message_text=>'Minimalus stulpelio plotis (pikseliais)'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69473988225066753)
+,p_name=>'APEX.NUMBER_FIELD.VALUE_INVALID'
+,p_message_language=>'lt'
+,p_message_text=>unistr('#LABEL# turi b\016Bti skai\010Dius!')
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(71760822271346286)
+,p_name=>'APEX.PAGE_ITEM_IS_REQUIRED'
+,p_message_language=>'lt'
+,p_message_text=>'#LABEL# parinkite duomenis.'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68191711059567803)
+,p_name=>'APEXIR_ACTIONS'
+,p_message_language=>'lt'
+,p_message_text=>'Veiksmai'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(68191574561565086)
+,p_name=>'APEXIR_ALL_COLUMNS'
+,p_message_language=>'lt'
+,p_message_text=>'Visi stulpeliai'
+,p_is_js_message=>true
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(70974537436483148)
+,p_name=>'APEXIR_CHART'
+,p_message_language=>'lt'
+,p_message_text=>'Grafikas'
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(69720131995763885)
+,p_name=>'APEXIR_COLUMNS'
+,p_message_language=>'lt'
+,p_message_text=>'Stulpeliai'
+,p_is_js_message=>true
+);
+wwv_flow_imp.component_end;
+end;
+/
+begin
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.0'
+,p_default_workspace_id=>1000000
+,p_default_application_id=>101
+,p_default_id_offset=>74949676192244878
+,p_default_owner=>'DETALES'
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(71675501355957875)
+,p_name=>'FLOW.SINGLE_VALIDATION_ERROR'
+,p_message_language=>'lt'
+,p_message_text=>'Klaida'
+,p_is_js_message=>true
+);
+null;
+wwv_flow_imp.component_end;
+end;
+/
+begin
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.0'
+,p_default_workspace_id=>1000000
+,p_default_application_id=>101
+,p_default_id_offset=>74949676192244878
+,p_default_owner=>'DETALES'
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(70974997939491304)
+,p_name=>'LAYOUT.CHART'
+,p_message_language=>'lt'
+,p_message_text=>'Grafikas'
+);
+null;
+wwv_flow_imp.component_end;
+end;
+/
+begin
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.0'
+,p_default_workspace_id=>1000000
+,p_default_application_id=>101
+,p_default_id_offset=>74949676192244878
+,p_default_owner=>'DETALES'
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(17809350432565372)
+,p_name=>'NO_DATA_FOUND'
+,p_message_language=>'lt'
+,p_message_text=>unistr('Nerasta duomen\0173!')
+);
+null;
+wwv_flow_imp.component_end;
+end;
+/
+begin
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.0'
+,p_default_workspace_id=>1000000
+,p_default_application_id=>101
+,p_default_id_offset=>74949676192244878
+,p_default_owner=>'DETALES'
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(70974768615487644)
+,p_name=>'REGION_NAME.NATIVE_JET_CHART'
+,p_message_language=>'lt'
+,p_message_text=>'Grafikas'
+);
+null;
+wwv_flow_imp.component_end;
+end;
+/

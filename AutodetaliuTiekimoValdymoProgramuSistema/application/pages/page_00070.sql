@@ -1,0 +1,228 @@
+prompt --application/pages/page_00070
+begin
+--   Manifest
+--     PAGE: 00070
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.0'
+,p_default_workspace_id=>1000000
+,p_default_application_id=>101
+,p_default_id_offset=>74949676192244878
+,p_default_owner=>'DETALES'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>70
+,p_name=>'Savikainos keitimas'
+,p_alias=>'SAVIKAINOS-KEITIMAS'
+,p_page_mode=>'MODAL'
+,p_step_title=>'&P70_SUPPLIER.'
+,p_autocomplete_on_off=>'OFF'
+,p_javascript_code_onload=>'apex.util.getTopApex().jQuery(".ui-dialog-content").dialog("option", "title", "Detales savikaina");'
+,p_inline_css=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'.ui-dialog-title',
+'  { font-size: small !important;',
+'  }'))
+,p_page_template_options=>'#DEFAULT#'
+,p_dialog_width=>'500px'
+,p_protection_level=>'C'
+,p_page_component_map=>'02'
+,p_last_updated_by=>'DEV'
+,p_last_upd_yyyymmddhh24miss=>'20230509180951'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(62373889198933210)
+,p_plug_name=>'Buttons'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(9629970051517884)
+,p_plug_display_sequence=>20
+,p_plug_display_point=>'REGION_POSITION_03'
+,p_attribute_01=>'N'
+,p_attribute_02=>'TEXT'
+,p_attribute_03=>'Y'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(62383808918933215)
+,p_plug_name=>'Savikainos keitimas'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(9626611630517882)
+,p_plug_display_sequence=>10
+,p_query_type=>'TABLE'
+,p_query_table=>'V_ORDER_DETAILS_PREP'
+,p_include_rowid_column=>false
+,p_is_editable=>true
+,p_edit_operations=>'i:u:d'
+,p_lost_update_check_type=>'VALUES'
+,p_plug_source_type=>'NATIVE_FORM'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(68567756760418121)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_imp.id(62373889198933210)
+,p_button_name=>'CANCEL'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(9717591381517982)
+,p_button_image_alt=>unistr('At\0161aukti')
+,p_button_position=>'CLOSE'
+,p_warn_on_unsaved_changes=>null
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(68567373818418121)
+,p_button_sequence=>30
+,p_button_plug_id=>wwv_flow_imp.id(62373889198933210)
+,p_button_name=>'SAVE'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(9717591381517982)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>unistr('I\0161saugoti')
+,p_button_position=>'NEXT'
+,p_confirm_message=>unistr('Ar tikrai norite pakeisti savikain\0105?')
+,p_confirm_style=>'warning'
+,p_button_condition=>'P70_NID'
+,p_button_condition_type=>'ITEM_IS_NOT_NULL'
+,p_database_action=>'UPDATE'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(68570749741418127)
+,p_name=>'P70_SUPPLIER'
+,p_item_sequence=>200
+,p_item_plug_id=>wwv_flow_imp.id(62383808918933215)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(68571122061418127)
+,p_name=>'P70_CODE'
+,p_source_data_type=>'VARCHAR2'
+,p_item_sequence=>190
+,p_item_plug_id=>wwv_flow_imp.id(62383808918933215)
+,p_item_source_plug_id=>wwv_flow_imp.id(62383808918933215)
+,p_source=>'SPART_CODE'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(68571491147418127)
+,p_name=>'P70_SUPPLIER_ID'
+,p_source_data_type=>'NUMBER'
+,p_item_sequence=>180
+,p_item_plug_id=>wwv_flow_imp.id(62383808918933215)
+,p_item_source_plug_id=>wwv_flow_imp.id(62383808918933215)
+,p_source=>'NSUPPLIER_ID'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(68571933282418127)
+,p_name=>'P70_ORDER_ID'
+,p_source_data_type=>'NUMBER'
+,p_item_sequence=>170
+,p_item_plug_id=>wwv_flow_imp.id(62383808918933215)
+,p_item_source_plug_id=>wwv_flow_imp.id(62383808918933215)
+,p_source=>'NORDER_ID'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(68572332038418128)
+,p_name=>'P70_NPRICEWOSURCHARGE'
+,p_source_data_type=>'NUMBER'
+,p_is_required=>true
+,p_item_sequence=>130
+,p_item_plug_id=>wwv_flow_imp.id(62383808918933215)
+,p_item_source_plug_id=>wwv_flow_imp.id(62383808918933215)
+,p_prompt=>'Savikaina'
+,p_source=>'NPRICE'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_NUMBER_FIELD'
+,p_cSize=>32
+,p_field_template=>wwv_flow_imp.id(9716479221517977)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_attribute_01=>'0'
+,p_attribute_02=>'10000'
+,p_attribute_03=>'right'
+,p_attribute_04=>'text'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(68572762757418129)
+,p_name=>'P70_NID'
+,p_source_data_type=>'NUMBER'
+,p_is_primary_key=>true
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(62383808918933215)
+,p_item_source_plug_id=>wwv_flow_imp.id(62383808918933215)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Nid'
+,p_source=>'NID'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_imp.id(9716479221517977)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_protection_level=>'S'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(68566081479418113)
+,p_name=>'Cancel Dialog'
+,p_event_sequence=>10
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_imp.id(68567756760418121)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'click'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(68565649411418112)
+,p_event_id=>wwv_flow_imp.id(68566081479418113)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_DIALOG_CANCEL'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(68568460065418122)
+,p_process_sequence=>10
+,p_process_point=>'AFTER_SUBMIT'
+,p_region_id=>wwv_flow_imp.id(62383808918933215)
+,p_process_type=>'NATIVE_FORM_DML'
+,p_process_name=>'Process form Antkainio keitimas'
+,p_attribute_01=>'REGION_SOURCE'
+,p_attribute_05=>'Y'
+,p_attribute_06=>'Y'
+,p_attribute_08=>'Y'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(68566521787418113)
+,p_process_sequence=>50
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_CLOSE_WINDOW'
+,p_process_name=>'Close Dialog'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when=>'CREATE,SAVE,DELETE'
+,p_process_when_type=>'REQUEST_IN_CONDITION'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(68568777802418125)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_region_id=>wwv_flow_imp.id(62383808918933215)
+,p_process_type=>'NATIVE_FORM_INIT'
+,p_process_name=>'Initialize form Antkainio keitimas'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_imp.component_end;
+end;
+/

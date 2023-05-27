@@ -1,0 +1,243 @@
+prompt --application/pages/page_00071
+begin
+--   Manifest
+--     PAGE: 00071
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.0'
+,p_default_workspace_id=>1000000
+,p_default_application_id=>101
+,p_default_id_offset=>74949676192244878
+,p_default_owner=>'DETALES'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>71
+,p_name=>'Kainos su antkainiu keitimas'
+,p_alias=>'KAINOS-SU-ANTKAINIU-KEITIMAS'
+,p_page_mode=>'MODAL'
+,p_step_title=>'Kainos su antkainiu keitimas'
+,p_autocomplete_on_off=>'OFF'
+,p_javascript_code_onload=>unistr('apex.util.getTopApex().jQuery(".ui-dialog-content").dialog("option", "title", "Detal\0117s kaina");')
+,p_inline_css=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'.ui-dialog-title',
+'  { font-size: small !important;',
+'  }'))
+,p_page_template_options=>'#DEFAULT#'
+,p_dialog_width=>'500px'
+,p_protection_level=>'C'
+,p_page_component_map=>'16'
+,p_last_updated_by=>'DEV'
+,p_last_upd_yyyymmddhh24miss=>'20230509181019'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(55983851346070474)
+,p_plug_name=>'Buttons'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(9629970051517884)
+,p_plug_display_sequence=>20
+,p_plug_display_point=>'REGION_POSITION_03'
+,p_attribute_01=>'N'
+,p_attribute_02=>'TEXT'
+,p_attribute_03=>'Y'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(55993771066070479)
+,p_plug_name=>'Kainos keitimas'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(9626611630517882)
+,p_plug_display_sequence=>10
+,p_query_type=>'TABLE'
+,p_query_table=>'V_ORDER_DETAILS_PREP_INFO'
+,p_include_rowid_column=>false
+,p_is_editable=>true
+,p_edit_operations=>'i:u:d'
+,p_lost_update_check_type=>'VALUES'
+,p_plug_source_type=>'NATIVE_FORM'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(68554115452382138)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_imp.id(55983851346070474)
+,p_button_name=>'CANCEL'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(9717591381517982)
+,p_button_image_alt=>unistr('At\0161aukti')
+,p_button_position=>'CLOSE'
+,p_warn_on_unsaved_changes=>null
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(68553774714382138)
+,p_button_sequence=>30
+,p_button_plug_id=>wwv_flow_imp.id(55983851346070474)
+,p_button_name=>'SAVE'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(9717591381517982)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>unistr('I\0161saugoti')
+,p_button_position=>'NEXT'
+,p_button_condition=>'P71_NID'
+,p_button_condition_type=>'ITEM_IS_NOT_NULL'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(68557048513382140)
+,p_name=>'P71_SUPPLIER'
+,p_item_sequence=>280
+,p_item_plug_id=>wwv_flow_imp.id(55993771066070479)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(68557442171382140)
+,p_name=>'P71_CODE'
+,p_source_data_type=>'VARCHAR2'
+,p_item_sequence=>170
+,p_item_plug_id=>wwv_flow_imp.id(55993771066070479)
+,p_item_source_plug_id=>wwv_flow_imp.id(55993771066070479)
+,p_source=>'SPART_CODE'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(68557857737382140)
+,p_name=>'P71_SUPPLIER_ID'
+,p_source_data_type=>'NUMBER'
+,p_item_sequence=>160
+,p_item_plug_id=>wwv_flow_imp.id(55993771066070479)
+,p_item_source_plug_id=>wwv_flow_imp.id(55993771066070479)
+,p_source=>'NSUPPLIER_ID'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(68558197446382141)
+,p_name=>'P71_ORDER_ID'
+,p_source_data_type=>'NUMBER'
+,p_item_sequence=>150
+,p_item_plug_id=>wwv_flow_imp.id(55993771066070479)
+,p_item_source_plug_id=>wwv_flow_imp.id(55993771066070479)
+,p_source=>'NORDER_ID'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(68559059042382141)
+,p_name=>'P71_NID'
+,p_source_data_type=>'NUMBER'
+,p_is_primary_key=>true
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(55993771066070479)
+,p_item_source_plug_id=>wwv_flow_imp.id(55993771066070479)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Nid'
+,p_source=>'NID'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_imp.id(9716479221517977)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_protection_level=>'S'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(69120796359959453)
+,p_name=>'P71_SOURPRICE_WO_TAX'
+,p_source_data_type=>'VARCHAR2'
+,p_item_sequence=>270
+,p_item_plug_id=>wwv_flow_imp.id(55993771066070479)
+,p_item_source_plug_id=>wwv_flow_imp.id(55993771066070479)
+,p_source=>'SOUR_PRICE_WO_TAX'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(69121410906959459)
+,p_name=>'P71_SPRICE_WO_TAX'
+,p_source_data_type=>'VARCHAR2'
+,p_is_required=>true
+,p_item_sequence=>260
+,p_item_plug_id=>wwv_flow_imp.id(55993771066070479)
+,p_item_source_plug_id=>wwv_flow_imp.id(55993771066070479)
+,p_prompt=>unistr('Detal\0117s kaina su antkainiu ')
+,p_source=>'SPRICE_WO_TAX'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_NUMBER_FIELD'
+,p_cSize=>30
+,p_cMaxlength=>19
+,p_field_template=>wwv_flow_imp.id(9716479221517977)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_attribute_03=>'right'
+,p_attribute_04=>'text'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(68552962463382138)
+,p_name=>'Cancel Dialog'
+,p_event_sequence=>10
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_imp.id(68554115452382138)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'click'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(68552426515382137)
+,p_event_id=>wwv_flow_imp.id(68552962463382138)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_DIALOG_CANCEL'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(68311614501210452)
+,p_process_sequence=>60
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'Save'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'DECLARE',
+'nl_newsurcharge NUMBER;',
+'BEGIN',
+'nl_newsurcharge := (:P71_SPRICE_WO_TAX/ :P71_SOURPRICE_WO_TAX - 1) * 100;',
+'',
+'UPDATE V_ORDER_DETAILS_PREP SET NSURCHARGE = ROUND(nl_newsurcharge,4) where nid = :P71_NID;',
+'END;'))
+,p_process_clob_language=>'PLSQL'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_imp.id(68553774714382138)
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(68553281482382138)
+,p_process_sequence=>70
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_CLOSE_WINDOW'
+,p_process_name=>'Close Dialog'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when=>'CREATE,SAVE,DELETE'
+,p_process_when_type=>'REQUEST_IN_CONDITION'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(68555172576382139)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_region_id=>wwv_flow_imp.id(55993771066070479)
+,p_process_type=>'NATIVE_FORM_INIT'
+,p_process_name=>'Initialize form Antkainio keitimas'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_imp.component_end;
+end;
+/

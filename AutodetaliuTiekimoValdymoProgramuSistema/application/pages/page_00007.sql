@@ -1,0 +1,222 @@
+prompt --application/pages/page_00007
+begin
+--   Manifest
+--     PAGE: 00007
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.0'
+,p_default_workspace_id=>1000000
+,p_default_application_id=>101
+,p_default_id_offset=>74949676192244878
+,p_default_owner=>'DETALES'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>7
+,p_name=>unistr('\012Emon\0117s i\0161 excel')
+,p_alias=>unistr('\012EMON\0116S-I\0160-EXCEL')
+,p_page_mode=>'MODAL'
+,p_step_title=>unistr('\012Emon\0117s i\0161 excel')
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_page_component_map=>'17'
+,p_last_updated_by=>'DEV'
+,p_last_upd_yyyymmddhh24miss=>'20220502121140'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(17599578277103217)
+,p_plug_name=>unistr('Pasirinkite fail\0105')
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(9655019078517905)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_grid_column_span=>10
+,p_plug_display_column=>2
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(17599422681103216)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_imp.id(17599578277103217)
+,p_button_name=>'New'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(9717591381517982)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Sukurti'
+,p_button_position=>'CREATE'
+,p_warn_on_unsaved_changes=>null
+,p_database_action=>'INSERT'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(16327152045697845)
+,p_name=>'P7_FILE'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(17599578277103217)
+,p_use_cache_before_default=>'NO'
+,p_item_default=>'-'
+,p_prompt=>'Failas'
+,p_display_as=>'NATIVE_FILE'
+,p_cSize=>30
+,p_colspan=>5
+,p_field_template=>wwv_flow_imp.id(9716479221517977)
+,p_item_template_options=>'#DEFAULT#'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'DB_COLUMN'
+,p_attribute_02=>'wwv_flow_files.mime_type'
+,p_attribute_03=>'wwv_flow_files.filename'
+,p_attribute_04=>'wwv_flow_files.file_charset'
+,p_attribute_05=>'wwv_flow_files.last_updated'
+,p_attribute_06=>'N'
+,p_attribute_12=>'INLINE'
+,p_attribute_13=>'Pasirinkti'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(17667884914882608)
+,p_name=>'P7_FILE_NAME'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_imp.id(17599578277103217)
+,p_item_default=>'-'
+,p_prompt=>'Failo pavadinimas'
+,p_source=>'select title from wwv_flow_files where filename like ''%.xlsx'';'
+,p_source_type=>'QUERY'
+,p_display_as=>'NATIVE_DISPLAY_ONLY'
+,p_colspan=>5
+,p_field_template=>wwv_flow_imp.id(9716479221517977)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'VALUE'
+,p_attribute_04=>'Y'
+,p_attribute_05=>'PLAIN'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(17600421800103226)
+,p_name=>'New_2'
+,p_event_sequence=>40
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_imp.id(17599422681103216)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'click'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(17600567010103227)
+,p_event_id=>wwv_flow_imp.id(17600421800103226)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'DECLARE',
+'il_error NUMBER;',
+'sl_error VARCHAR2(254);',
+'BEGIN',
+'company_ext_excel_import(:P7_FILE_NAME',
+'                        ,il_error',
+'                        ,sl_error);',
+'END;'))
+,p_attribute_02=>'P7_FILE,P7_FILE_NAME'
+,p_attribute_05=>'PLSQL'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(17600696953103228)
+,p_event_id=>wwv_flow_imp.id(17600421800103226)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_ALERT'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+unistr('\012Era\0161as(-ai) sukurtas(-i)!'),
+''))
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(17668609882882616)
+,p_event_id=>wwv_flow_imp.id(17600421800103226)
+,p_event_result=>'TRUE'
+,p_action_sequence=>40
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLEAR'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P7_FILE,P7_FILE_NAME'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(613678322224871)
+,p_event_id=>wwv_flow_imp.id(17600421800103226)
+,p_event_result=>'TRUE'
+,p_action_sequence=>50
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>'apex.navigation.redirect ( "f?p=&APP_ID.:2:&APP_SESSION.::NO:RP::" );'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(17667608229882606)
+,p_name=>'New'
+,p_event_sequence=>50
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P7_FILE'
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'change'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(17667726914882607)
+,p_event_id=>wwv_flow_imp.id(17667608229882606)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_SUBMIT_PAGE'
+,p_attribute_02=>'Y'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(17668318008882613)
+,p_event_id=>wwv_flow_imp.id(17667608229882606)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_SET_FOCUS'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P7_FILE_NAME'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(17668022600882610)
+,p_event_id=>wwv_flow_imp.id(17667608229882606)
+,p_event_result=>'TRUE'
+,p_action_sequence=>40
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_SET_VALUE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P7_FILE,P7_FILE_NAME'
+,p_attribute_01=>'SQL_STATEMENT'
+,p_attribute_03=>'select title from wwv_flow_files where title like ''%.xlsx'';'
+,p_attribute_08=>'N'
+,p_attribute_09=>'N'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(29027031107727246)
+,p_name=>'New_3'
+,p_event_sequence=>60
+,p_triggering_element_type=>'REGION'
+,p_triggering_region_id=>wwv_flow_imp.id(17599578277103217)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'apexafterclosedialog'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(29027121224727247)
+,p_event_id=>wwv_flow_imp.id(29027031107727246)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLOSE_REGION'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(17599578277103217)
+);
+wwv_flow_imp.component_end;
+end;
+/

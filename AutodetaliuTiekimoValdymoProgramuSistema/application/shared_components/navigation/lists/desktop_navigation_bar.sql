@@ -1,0 +1,104 @@
+prompt --application/shared_components/navigation/lists/desktop_navigation_bar
+begin
+--   Manifest
+--     LIST: Desktop Navigation Bar
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.0'
+,p_default_workspace_id=>1000000
+,p_default_application_id=>101
+,p_default_id_offset=>74949676192244878
+,p_default_owner=>'DETALES'
+);
+wwv_flow_imp_shared.create_list(
+ p_id=>wwv_flow_imp.id(9739993177518057)
+,p_name=>'Desktop Navigation Bar'
+,p_list_status=>'PUBLIC'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(9898928469521138)
+,p_list_item_display_sequence=>10
+,p_list_item_link_text=>'Feedback'
+,p_list_item_link_target=>'f?p=&APP_ID.:10050:&SESSION.::&DEBUG.:RP,10050:P10050_PAGE_ID:&APP_PAGE_ID.:'
+,p_list_item_icon=>'fa-comment-o'
+,p_list_text_02=>'icon-only'
+,p_required_patch=>wwv_flow_imp.id(9741983799518107)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(9899277200521138)
+,p_list_item_display_sequence=>20
+,p_list_item_link_text=>'About'
+,p_list_item_icon=>'fa-question-circle-o'
+,p_list_text_02=>'icon-only'
+,p_required_patch=>wwv_flow_imp.id(9742430818518107)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(9899712586521139)
+,p_list_item_display_sequence=>30
+,p_list_item_link_text=>'Page Help'
+,p_list_item_link_target=>'f?p=&APP_ID.:10061:&SESSION.::&DEBUG.::P10061_PAGE_ID:&APP_PAGE_ID.:'
+,p_list_item_icon=>'fa-question-circle-o'
+,p_parent_list_item_id=>wwv_flow_imp.id(9899277200521138)
+,p_list_text_02=>'icon-only'
+,p_required_patch=>wwv_flow_imp.id(9742430818518107)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(9900148272521139)
+,p_list_item_display_sequence=>40
+,p_list_item_link_text=>'---'
+,p_list_item_link_target=>'separator'
+,p_parent_list_item_id=>wwv_flow_imp.id(9899277200521138)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(9900509419521139)
+,p_list_item_display_sequence=>50
+,p_list_item_link_text=>'About Page'
+,p_list_item_link_target=>'f?p=&APP_ID.:10060:&SESSION.::&DEBUG.:10060'
+,p_list_item_icon=>'fa-info-circle-o'
+,p_parent_list_item_id=>wwv_flow_imp.id(9899277200521138)
+,p_required_patch=>wwv_flow_imp.id(9742430818518107)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(9900802509521140)
+,p_list_item_display_sequence=>100
+,p_list_item_link_text=>'&APP_USER.'
+,p_list_item_link_target=>'#'
+,p_list_item_icon=>'fa-user'
+,p_list_text_02=>'has-username'
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(9901339801521140)
+,p_list_item_display_sequence=>70
+,p_list_item_link_text=>'---'
+,p_list_item_link_target=>'separator'
+,p_parent_list_item_id=>wwv_flow_imp.id(9900802509521140)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(11704519967468287)
+,p_list_item_display_sequence=>80
+,p_list_item_link_text=>'Paskyros Nustatymai'
+,p_list_item_link_target=>'f?p=&APP_ID.:21:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-user-circle'
+,p_parent_list_item_id=>wwv_flow_imp.id(9900802509521140)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(9901783793521140)
+,p_list_item_display_sequence=>90
+,p_list_item_link_text=>'Atsijungti'
+,p_list_item_link_target=>'&LOGOUT_URL.'
+,p_list_item_icon=>'fa-sign-out'
+,p_parent_list_item_id=>wwv_flow_imp.id(9900802509521140)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp.component_end;
+end;
+/

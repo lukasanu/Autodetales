@@ -1,0 +1,345 @@
+prompt --application/pages/page_00002
+begin
+--   Manifest
+--     PAGE: 00002
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.0'
+,p_default_workspace_id=>1000000
+,p_default_application_id=>101
+,p_default_id_offset=>74949676192244878
+,p_default_owner=>'DETALES'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>2
+,p_name=>'Klientai'
+,p_alias=>'KLIENTAI'
+,p_step_title=>'Klientai'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_page_component_map=>'18'
+,p_last_updated_by=>'DEV'
+,p_last_upd_yyyymmddhh24miss=>'20230501175503'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(13365036999994580)
+,p_plug_name=>'Report 1'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(9653110943517903)
+,p_plug_display_sequence=>10
+,p_plug_grid_column_span=>12
+,p_query_type=>'SQL'
+,p_plug_source=>unistr('select * from v_clients_info order by TRIM(regexp_replace(scompany_name, q''([":'':\201C:\201D:\201E:,])'', '''')) ')
+,p_plug_source_type=>'NATIVE_IR'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_prn_content_disposition=>'ATTACHMENT'
+,p_prn_page_header=>'Report 1'
+);
+wwv_flow_imp_page.create_worksheet(
+ p_id=>wwv_flow_imp.id(13365430854994580)
+,p_name=>'Report 1'
+,p_max_row_count_message=>'The maximum row count for this report is #MAX_ROW_COUNT# rows.  Please apply a filter to reduce the number of records in your query.'
+,p_no_data_found_message=>unistr('N\0117ra \012Fra\0161\0173 atitinkan\010Di\0173 u\017Eklaus\0105.')
+,p_search_button_label=>unistr('Ie\0161koti')
+,p_pagination_type=>'ROWS_X_TO_Y'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_report_list_mode=>'TABS'
+,p_lazy_loading=>false
+,p_show_detail_link=>'C'
+,p_download_formats=>'CSV:HTML:XLSX:PDF'
+,p_enable_mail_download=>'Y'
+,p_detail_link=>'f?p=&APP_ID.:9:&SESSION.::&DEBUG.:RP,9:P9_NID,P9_NTYPE,P9_SRESPONSIBLE_EMPLOYEE:#NID#,0,#SRESPONSIBLE_EMPLOYEE#'
+,p_detail_link_text=>'<span aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span>'
+,p_owner=>'DEV'
+,p_internal_uid=>13365430854994580
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71639031312197452)
+,p_db_column_name=>'NID'
+,p_display_order=>10
+,p_column_identifier=>'AK'
+,p_column_label=>'Nid'
+,p_column_type=>'NUMBER'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71638952200197451)
+,p_db_column_name=>'SCOMPANY_NAME'
+,p_display_order=>20
+,p_column_identifier=>'AL'
+,p_column_label=>'Klientas'
+,p_allow_hide=>'N'
+,p_column_type=>'STRING'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71331125835107151)
+,p_db_column_name=>'CUSTOMERSHORT'
+,p_display_order=>30
+,p_column_identifier=>'BF'
+,p_column_label=>'Trumpas pavadinimas'
+,p_column_type=>'STRING'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71638808810197450)
+,p_db_column_name=>'SEMAIL'
+,p_display_order=>40
+,p_column_identifier=>'AM'
+,p_column_label=>unistr('El. pa\0161tas')
+,p_allow_hide=>'N'
+,p_column_type=>'STRING'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71638677060197449)
+,p_db_column_name=>'SPHONE'
+,p_display_order=>50
+,p_column_identifier=>'AN'
+,p_column_label=>'Tel. nr.'
+,p_allow_hide=>'N'
+,p_column_type=>'STRING'
+,p_column_alignment=>'CENTER'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71638659674197448)
+,p_db_column_name=>'SWEBSITE'
+,p_display_order=>60
+,p_column_identifier=>'AO'
+,p_column_label=>'El. puslapis'
+,p_allow_hide=>'N'
+,p_column_type=>'STRING'
+,p_column_alignment=>'CENTER'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71638527481197447)
+,p_db_column_name=>'SCOUNTRY_NAME'
+,p_display_order=>70
+,p_column_identifier=>'AP'
+,p_column_label=>'Scountry Name'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71638456209197446)
+,p_db_column_name=>'SCITY_NAME'
+,p_display_order=>80
+,p_column_identifier=>'AQ'
+,p_column_label=>'Scity Name'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71638314185197445)
+,p_db_column_name=>'NCOUNTRY_ID'
+,p_display_order=>90
+,p_column_identifier=>'AR'
+,p_column_label=>'Ncountry Id'
+,p_column_type=>'NUMBER'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71638273376197444)
+,p_db_column_name=>'NCITY_ID'
+,p_display_order=>100
+,p_column_identifier=>'AS'
+,p_column_label=>'Ncity Id'
+,p_column_type=>'NUMBER'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71638083012197443)
+,p_db_column_name=>'SCOMPANY_ADDRESS'
+,p_display_order=>110
+,p_column_identifier=>'AT'
+,p_column_label=>unistr('\012Emon\0117s adresas')
+,p_allow_hide=>'N'
+,p_column_type=>'STRING'
+,p_column_alignment=>'CENTER'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71638003528197442)
+,p_db_column_name=>'SSHIPPING_ADDRESS'
+,p_display_order=>120
+,p_column_identifier=>'AU'
+,p_column_label=>'Siuntimo adresas'
+,p_allow_hide=>'N'
+,p_column_type=>'STRING'
+,p_column_alignment=>'CENTER'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71637902025197441)
+,p_db_column_name=>'SZIP'
+,p_display_order=>130
+,p_column_identifier=>'AV'
+,p_column_label=>unistr('Pa\0161to kodas')
+,p_allow_hide=>'N'
+,p_column_type=>'STRING'
+,p_column_alignment=>'CENTER'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71637779167197440)
+,p_db_column_name=>'SCOMPANY_CODE'
+,p_display_order=>140
+,p_column_identifier=>'AW'
+,p_column_label=>unistr('\012Emon\0117s kodas')
+,p_allow_hide=>'N'
+,p_column_type=>'STRING'
+,p_column_alignment=>'CENTER'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71637683680197439)
+,p_db_column_name=>'STAX_CODE'
+,p_display_order=>150
+,p_column_identifier=>'AX'
+,p_column_label=>unistr('PVM mok\0117tojo kodas')
+,p_allow_hide=>'N'
+,p_column_type=>'STRING'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71637588966197438)
+,p_db_column_name=>'SCONTRACT_NUMBER'
+,p_display_order=>160
+,p_column_identifier=>'AY'
+,p_column_label=>'Sutarties numeris'
+,p_allow_hide=>'N'
+,p_column_type=>'STRING'
+,p_column_alignment=>'CENTER'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71637496260197437)
+,p_db_column_name=>'NDO_PAYMENT_DELAY'
+,p_display_order=>170
+,p_column_identifier=>'AZ'
+,p_column_label=>'Ndo Payment Delay'
+,p_column_type=>'NUMBER'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71637474304197436)
+,p_db_column_name=>'NPAYMENT_DELAY_IN_DAYS'
+,p_display_order=>180
+,p_column_identifier=>'BA'
+,p_column_label=>unistr('Mok\0117jimo atid\0117jimas (dienomis)')
+,p_allow_hide=>'N'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71637360909197435)
+,p_db_column_name=>'SRESPONSIBLE_EMPLOYEE'
+,p_display_order=>190
+,p_column_identifier=>'BB'
+,p_column_label=>'Atsakingas asmuo'
+,p_allow_hide=>'N'
+,p_column_type=>'STRING'
+,p_column_alignment=>'CENTER'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71637181755197434)
+,p_db_column_name=>'NHAS_COMMENT'
+,p_display_order=>200
+,p_column_identifier=>'BC'
+,p_column_label=>'Nhas Comment'
+,p_column_type=>'NUMBER'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71637115539197433)
+,p_db_column_name=>'SCOMPANY_COMMENT'
+,p_display_order=>210
+,p_column_identifier=>'BD'
+,p_column_label=>'Scompany Comment'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(71636995489197432)
+,p_db_column_name=>'NCONTACTS'
+,p_display_order=>220
+,p_column_identifier=>'BE'
+,p_column_label=>'Kontaktai'
+,p_column_link=>'f?p=&APP_ID.:10:&SESSION.::&DEBUG.:10:P10_COMPANYID:#NID#'
+,p_column_linktext=>'#NCONTACTS#'
+,p_allow_hide=>'N'
+,p_column_type=>'STRING'
+,p_column_alignment=>'CENTER'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_rpt(
+ p_id=>wwv_flow_imp.id(13382793835016103)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'133828'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_report_columns=>'SCOMPANY_NAME:SEMAIL:SPHONE:SWEBSITE:SCOMPANY_ADDRESS:SSHIPPING_ADDRESS:SZIP:SCOMPANY_CODE:STAX_CODE:SCONTRACT_NUMBER:NPAYMENT_DELAY_IN_DAYS:SRESPONSIBLE_EMPLOYEE:NCONTACTS:'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(13374177369994588)
+,p_plug_name=>'Klientai'
+,p_icon_css_classes=>'fa-address-card'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(9627669531517882)
+,p_plug_display_sequence=>10
+,p_plug_display_point=>'REGION_POSITION_01'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(13375357612994589)
+,p_button_sequence=>30
+,p_button_plug_id=>wwv_flow_imp.id(13365036999994580)
+,p_button_name=>'CREATE'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(9717591381517982)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Kurti'
+,p_button_position=>'RIGHT_OF_IR_SEARCH_BAR'
+,p_button_redirect_url=>'f?p=&APP_ID.:3:&SESSION.::&DEBUG.:3'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(13373011417994587)
+,p_name=>'Edit Report - Dialog Closed'
+,p_event_sequence=>10
+,p_triggering_element_type=>'REGION'
+,p_triggering_region_id=>wwv_flow_imp.id(13365036999994580)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'apexafterclosedialog'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(13373539168994587)
+,p_event_id=>wwv_flow_imp.id(13373011417994587)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(13365036999994580)
+);
+wwv_flow_imp.component_end;
+end;
+/

@@ -1,0 +1,537 @@
+prompt --application/pages/page_00056
+begin
+--   Manifest
+--     PAGE: 00056
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.0'
+,p_default_workspace_id=>1000000
+,p_default_application_id=>101
+,p_default_id_offset=>74949676192244878
+,p_default_owner=>'DETALES'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>56
+,p_name=>unistr('Konfig\016Bracija')
+,p_alias=>unistr('KONFIG\016ARACIJA')
+,p_page_mode=>'MODAL'
+,p_step_title=>unistr('Konfig\016Bracija')
+,p_autocomplete_on_off=>'OFF'
+,p_javascript_code=>'var htmldb_delete_message=''"DELETE_CONFIRM_MSG"'';'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_page_component_map=>'02'
+,p_last_updated_by=>'LAN'
+,p_last_upd_yyyymmddhh24miss=>'20220608095108'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(45424327340470491)
+,p_plug_name=>'Buttons'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(9629970051517884)
+,p_plug_display_sequence=>20
+,p_plug_display_point=>'REGION_POSITION_03'
+,p_attribute_01=>'N'
+,p_attribute_02=>'TEXT'
+,p_attribute_03=>'Y'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(45430993498470503)
+,p_plug_name=>unistr('Konfig\016Bracija')
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(9626611630517882)
+,p_plug_display_sequence=>10
+,p_query_type=>'TABLE'
+,p_query_table=>'V_SFTP_CONFIGURATION'
+,p_include_rowid_column=>false
+,p_is_editable=>true
+,p_edit_operations=>'i:u:d'
+,p_lost_update_check_type=>'VALUES'
+,p_plug_source_type=>'NATIVE_FORM'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(45423890917470490)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_imp.id(45424327340470491)
+,p_button_name=>'CANCEL'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(9717591381517982)
+,p_button_image_alt=>unistr('At\0161aukti')
+,p_button_position=>'CLOSE'
+,p_warn_on_unsaved_changes=>null
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(45422257151470489)
+,p_button_sequence=>20
+,p_button_plug_id=>wwv_flow_imp.id(45424327340470491)
+,p_button_name=>'DELETE'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#:t-Button--danger'
+,p_button_template_id=>wwv_flow_imp.id(9717591381517982)
+,p_button_image_alt=>unistr('I\0161trinti')
+,p_button_position=>'DELETE'
+,p_button_execute_validations=>'N'
+,p_warn_on_unsaved_changes=>null
+,p_button_condition=>'P56_ID'
+,p_button_condition_type=>'ITEM_IS_NOT_NULL'
+,p_database_action=>'DELETE'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(45421867559470489)
+,p_button_sequence=>30
+,p_button_plug_id=>wwv_flow_imp.id(45424327340470491)
+,p_button_name=>'SAVE'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(9717591381517982)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>unistr('I\0161saugoti')
+,p_button_position=>'NEXT'
+,p_warn_on_unsaved_changes=>null
+,p_button_condition=>'P56_ID'
+,p_button_condition_type=>'ITEM_IS_NOT_NULL'
+,p_database_action=>'UPDATE'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(45421506199470488)
+,p_button_sequence=>40
+,p_button_plug_id=>wwv_flow_imp.id(45424327340470491)
+,p_button_name=>'CREATE'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(9717591381517982)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Sukurti'
+,p_button_position=>'NEXT'
+,p_warn_on_unsaved_changes=>null
+,p_button_condition=>'P56_ID'
+,p_button_condition_type=>'ITEM_IS_NULL'
+,p_database_action=>'INSERT'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(45429126641470501)
+,p_name=>'P56_FILE_NAME'
+,p_source_data_type=>'VARCHAR2'
+,p_is_required=>true
+,p_item_sequence=>60
+,p_item_plug_id=>wwv_flow_imp.id(45430993498470503)
+,p_item_source_plug_id=>wwv_flow_imp.id(45430993498470503)
+,p_prompt=>'Failo Pavadinimas'
+,p_placeholder=>'pvz.: wess_select_full.csv'
+,p_source=>'FILE_NAME'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>60
+,p_cMaxlength=>100
+,p_field_template=>wwv_flow_imp.id(9716705801517978)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(45429475330470501)
+,p_name=>'P56_ORDER_TYPE_ID'
+,p_source_data_type=>'NUMBER'
+,p_is_required=>true
+,p_item_sequence=>50
+,p_item_plug_id=>wwv_flow_imp.id(45430993498470503)
+,p_item_source_plug_id=>wwv_flow_imp.id(45430993498470503)
+,p_prompt=>unistr('U\017Esakymo Tipas')
+,p_source=>'ORDER_TYPE_ID'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_lov=>'select name d, id r from v_order_types where supplier_id = :P56_SUPPLIER_ID order by name asc'
+,p_lov_display_null=>'YES'
+,p_lov_null_text=>'- Pasirinkti - '
+,p_lov_cascade_parent_items=>'P56_SUPPLIER_ID'
+,p_ajax_items_to_submit=>'P56_SUPPLIER_ID'
+,p_ajax_optimize_refresh=>'Y'
+,p_cHeight=>1
+,p_field_template=>wwv_flow_imp.id(9716705801517978)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_lov_display_extra=>'YES'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'NONE'
+,p_attribute_02=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(45429918950470502)
+,p_name=>'P56_SUPPLIER_ID'
+,p_source_data_type=>'NUMBER'
+,p_is_required=>true
+,p_item_sequence=>40
+,p_item_plug_id=>wwv_flow_imp.id(45430993498470503)
+,p_item_source_plug_id=>wwv_flow_imp.id(45430993498470503)
+,p_prompt=>unistr('Tiek\0117jas')
+,p_source=>'SUPPLIER_ID'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_lov=>'select company_name d, id r from v_suppliers order by company_name asc'
+,p_lov_display_null=>'YES'
+,p_lov_null_text=>'- Pasirinkti -'
+,p_cHeight=>1
+,p_field_template=>wwv_flow_imp.id(9716705801517978)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_lov_display_extra=>'YES'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'NONE'
+,p_attribute_02=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(45430279463470502)
+,p_name=>'P56_CAR_ID'
+,p_source_data_type=>'NUMBER'
+,p_is_required=>true
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_imp.id(45430993498470503)
+,p_item_source_plug_id=>wwv_flow_imp.id(45430993498470503)
+,p_prompt=>unistr('Automobilio Mark\0117')
+,p_source=>'CAR_ID'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_lov=>'select name d, id r from v_vehicle_brands order by name asc'
+,p_lov_display_null=>'YES'
+,p_lov_null_text=>'- Pasirinkti-'
+,p_cHeight=>1
+,p_field_template=>wwv_flow_imp.id(9716705801517978)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_lov_display_extra=>'YES'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'NONE'
+,p_attribute_02=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(45430655061470502)
+,p_name=>'P56_ID'
+,p_source_data_type=>'NUMBER'
+,p_is_primary_key=>true
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(45430993498470503)
+,p_item_source_plug_id=>wwv_flow_imp.id(45430993498470503)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Id'
+,p_source=>'ID'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_imp.id(9716479221517977)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_protection_level=>'S'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(46432320676505751)
+,p_name=>'P56_FLAG'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_imp.id(45430993498470503)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(64536665961424354)
+,p_name=>'P56_SDIRECTORY'
+,p_source_data_type=>'VARCHAR2'
+,p_is_required=>true
+,p_item_sequence=>70
+,p_item_plug_id=>wwv_flow_imp.id(45430993498470503)
+,p_item_source_plug_id=>wwv_flow_imp.id(45430993498470503)
+,p_prompt=>'Direktorijos Pavadinimas'
+,p_placeholder=>'pvz.: Halle/'
+,p_source=>'SDIRECTORY'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>60
+,p_cMaxlength=>20
+,p_field_template=>wwv_flow_imp.id(9716705801517978)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(45423827777470490)
+,p_name=>'Cancel Dialog'
+,p_event_sequence=>10
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_imp.id(45423890917470490)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'click'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(45422982068470489)
+,p_event_id=>wwv_flow_imp.id(45423827777470490)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_DIALOG_CANCEL'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(46432989866505758)
+,p_name=>'Delete'
+,p_event_sequence=>20
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_imp.id(45422257151470489)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'click'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(46432836794505757)
+,p_event_id=>wwv_flow_imp.id(46432989866505758)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CONFIRM'
+,p_attribute_01=>unistr('Ar tikrai norite i\0161trinti \012Fra\0161\0105?')
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(46432815690505756)
+,p_event_id=>wwv_flow_imp.id(46432989866505758)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>'delete from v_sftp_configuration where id = :P56_ID;'
+,p_attribute_02=>'P56_ID'
+,p_attribute_05=>'PLSQL'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(46432729105505755)
+,p_event_id=>wwv_flow_imp.id(46432989866505758)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLEAR'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(45430993498470503)
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(46432609925505754)
+,p_event_id=>wwv_flow_imp.id(46432989866505758)
+,p_event_result=>'TRUE'
+,p_action_sequence=>40
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>'apex.navigation.redirect ( "f?p=&APP_ID.:49:&APP_SESSION.::NO:RP::" );'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(46432474602505753)
+,p_name=>'Update'
+,p_event_sequence=>30
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_imp.id(45421867559470489)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'click'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(46432398717505752)
+,p_event_id=>wwv_flow_imp.id(46432474602505753)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'begin',
+'    if :P56_CAR_ID IS NULL OR :P56_SUPPLIER_ID IS NULL OR :P56_ORDER_TYPE_ID IS NULL OR :P56_FILE_NAME IS NULL THEN',
+'        :P56_FLAG:=1;',
+'    else',
+'        :P56_FLAG:=0;',
+'        update v_sftp_configuration ',
+'        set car_id = :P56_CAR_ID,',
+'        supplier_id = :P56_SUPPLIER_ID,',
+'        order_type_id = :P56_ORDER_TYPE_ID,',
+'        file_name = :P56_FILE_NAME',
+'        where id = :P56_ID;',
+'    end if;      ',
+'end;'))
+,p_attribute_02=>'P56_ID,P56_CAR_ID,P56_SUPPLIER_ID,P56_ORDER_TYPE_ID,P56_FILE_NAME'
+,p_attribute_03=>'P56_FLAG'
+,p_attribute_04=>'N'
+,p_attribute_05=>'PLSQL'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(46432187164505750)
+,p_event_id=>wwv_flow_imp.id(46432474602505753)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_ALERT'
+,p_attribute_01=>unistr('\012Era\0161as s\0117kmingai atnaujintas!')
+,p_client_condition_type=>'EQUALS'
+,p_client_condition_element=>'P56_FLAG'
+,p_client_condition_expression=>'0'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(46431965663505748)
+,p_event_id=>wwv_flow_imp.id(46432474602505753)
+,p_event_result=>'TRUE'
+,p_action_sequence=>50
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_ALERT'
+,p_attribute_01=>unistr('\012Eveskite visus duomenis!')
+,p_client_condition_type=>'EQUALS'
+,p_client_condition_element=>'P56_FLAG'
+,p_client_condition_expression=>'1'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(46431838796505747)
+,p_event_id=>wwv_flow_imp.id(46432474602505753)
+,p_event_result=>'TRUE'
+,p_action_sequence=>70
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLEAR'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(45430993498470503)
+,p_client_condition_type=>'EQUALS'
+,p_client_condition_element=>'P56_FLAG'
+,p_client_condition_expression=>'0'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(46431815943505746)
+,p_event_id=>wwv_flow_imp.id(46432474602505753)
+,p_event_result=>'TRUE'
+,p_action_sequence=>90
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>'apex.navigation.redirect ( "f?p=&APP_ID.:49:&APP_SESSION.::NO:RP::" );'
+,p_client_condition_type=>'NOT_EQUALS'
+,p_client_condition_element=>'P56_FLAG'
+,p_client_condition_expression=>'1'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(46431683208505745)
+,p_name=>'Insert'
+,p_event_sequence=>40
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_imp.id(45421506199470488)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'click'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(46431501971505743)
+,p_event_id=>wwv_flow_imp.id(46431683208505745)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'begin',
+'    if :P56_CAR_ID IS NULL OR :P56_SUPPLIER_ID IS NULL OR :P56_ORDER_TYPE_ID IS NULL OR :P56_FILE_NAME IS NULL OR :P56_SDIRECTORY IS NULL THEN',
+'        :P56_FLAG:=1;',
+'    else',
+'        :P56_FLAG:=0;',
+'        insert into v_sftp_configuration (car_id, supplier_id, order_type_id, file_name, active_flag, sdirectory)',
+'        values (:P56_CAR_ID, :P56_SUPPLIER_ID, :P56_ORDER_TYPE_ID, :P56_FILE_NAME, 0, :P56_SDIRECTORY);',
+'    end if;      ',
+'end;'))
+,p_attribute_02=>'P56_ID,P56_CAR_ID,P56_SUPPLIER_ID,P56_ORDER_TYPE_ID,P56_FILE_NAME,P56_SDIRECTORY'
+,p_attribute_03=>'P56_FLAG'
+,p_attribute_04=>'N'
+,p_attribute_05=>'PLSQL'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(46430937500505738)
+,p_event_id=>wwv_flow_imp.id(46431683208505745)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_ALERT'
+,p_attribute_01=>unistr('\012Era\0161as s\0117kmingai sukurtas!')
+,p_client_condition_type=>'EQUALS'
+,p_client_condition_element=>'P56_FLAG'
+,p_client_condition_expression=>'0'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(46430832954505737)
+,p_event_id=>wwv_flow_imp.id(46431683208505745)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_ALERT'
+,p_attribute_01=>unistr('\012Eveskite visus duomenis!')
+,p_client_condition_type=>'EQUALS'
+,p_client_condition_element=>'P56_FLAG'
+,p_client_condition_expression=>'1'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(46430816595505736)
+,p_event_id=>wwv_flow_imp.id(46431683208505745)
+,p_event_result=>'TRUE'
+,p_action_sequence=>40
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLEAR'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(45430993498470503)
+,p_client_condition_type=>'EQUALS'
+,p_client_condition_element=>'P56_FLAG'
+,p_client_condition_expression=>'0'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(46430653378505735)
+,p_event_id=>wwv_flow_imp.id(46431683208505745)
+,p_event_result=>'TRUE'
+,p_action_sequence=>50
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>'apex.navigation.redirect ( "f?p=&APP_ID.:49:&APP_SESSION.::NO:RP::" );'
+,p_client_condition_type=>'NOT_EQUALS'
+,p_client_condition_element=>'P56_FLAG'
+,p_client_condition_expression=>'1'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(45420646565470488)
+,p_process_sequence=>10
+,p_process_point=>'AFTER_SUBMIT'
+,p_region_id=>wwv_flow_imp.id(45430993498470503)
+,p_process_type=>'NATIVE_FORM_DML'
+,p_process_name=>'Process form Konfiguracija'
+,p_attribute_01=>'REGION_SOURCE'
+,p_attribute_05=>'Y'
+,p_attribute_06=>'Y'
+,p_attribute_08=>'Y'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(45420268729470487)
+,p_process_sequence=>50
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_CLOSE_WINDOW'
+,p_process_name=>'Close Dialog'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when=>'CREATE,SAVE,DELETE'
+,p_process_when_type=>'REQUEST_IN_CONDITION'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(45421033026470488)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_region_id=>wwv_flow_imp.id(45430993498470503)
+,p_process_type=>'NATIVE_FORM_INIT'
+,p_process_name=>'Initialize form Konfiguracija'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_imp.component_end;
+end;
+/
